@@ -1,5 +1,5 @@
-Write-Output "Test build script"
+$sln = Join-Path $PSScriptRoot -ChildPath ..\AdventureWorks\AdventureWorks.sln
 
-$path = $env:path -split ";"
+Write-Host "Attempting to build solution at $sln"
 
-Write-Output "Path includes the following: $path"
+. msbuild.exe $sln
