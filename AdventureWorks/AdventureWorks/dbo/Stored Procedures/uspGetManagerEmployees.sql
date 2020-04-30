@@ -12,7 +12,7 @@ BEGIN
         FROM [HumanResources].[Employee] e 
 			INNER JOIN [Person].[Person] p 
 			ON p.[BusinessEntityID] = e.[BusinessEntityID]
-        WHERE e.[BusinessEntityID] = @BusinessEntityID
+        WHERE e.[BusinessEntityID] = @BusinessEntityID  --comment
         UNION ALL
         SELECT e.[BusinessEntityID], e.[OrganizationNode], p.[FirstName], p.[LastName], [RecursionLevel] + 1 -- Join recursive member to anchor
         FROM [HumanResources].[Employee] e 
